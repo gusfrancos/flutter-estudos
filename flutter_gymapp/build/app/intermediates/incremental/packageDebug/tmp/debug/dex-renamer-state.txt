@@ -1,0 +1,4 @@
+#Mon May 06 09:01:35 BRT 2024
+base.0=C\:\\Gustavo\\Desenvolvimento\\WORKSPACE_FLUTER\\flutter-gymapprepository\\flutter_gymapp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
