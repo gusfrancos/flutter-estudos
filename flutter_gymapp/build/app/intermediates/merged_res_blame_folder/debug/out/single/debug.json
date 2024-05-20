@@ -20,10 +20,6 @@
         "source": "com.example.flutter_gymapp-main-1:/drawable-v21/launch_background.xml"
     },
     {
-        "merged": "com.example.flutter_gymapp-merged_res-7:/drawable_launch_background.xml.flat",
-        "source": "com.example.flutter_gymapp-main-1:/drawable/launch_background.xml"
-    },
-    {
         "merged": "com.example.flutter_gymapp-merged_res-7:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.example.flutter_gymapp-main-1:/mipmap-xxxhdpi/ic_launcher.png"
     }

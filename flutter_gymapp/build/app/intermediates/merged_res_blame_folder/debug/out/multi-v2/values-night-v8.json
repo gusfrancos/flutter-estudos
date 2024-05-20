@@ -4,7 +4,7 @@
             "outputFile": "com.example.flutter_gymapp-mergeDebugResources-5:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Gustavo\\Desenvolvimento\\WORKSPACE_FLUTER\\flutter-gymapprepository\\flutter_gymapp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Gustavo\\WorkSpaceFlutter\\flutter-gymapprepository\\flutter_gymapp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
