@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gymapp/_comun/minhas_cores.dart';
 import 'package:flutter_gymapp/_comun/validacoes_formularios.dart';
 import 'package:flutter_gymapp/componentes/decoracao_campo_autenticacao.dart';
+import 'package:flutter_gymapp/servicos/autenticacao_servicos.dart';
 
 class AutenticacaoTela extends StatefulWidget {
   const AutenticacaoTela({super.key});
@@ -17,6 +18,7 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _senhaController = TextEditingController();
   TextEditingController _nomeController = TextEditingController();
+  AutenticacaoServico _autenticacaoServico = AutenticacaoServico();
 
   @override
   Widget build(BuildContext context) {
@@ -190,6 +192,11 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
         print("Cadastro Validado");
         print(
             "${_emailController.text},{$_senhaController.text},{$_nomeController.text}");
+        _autenticacaoServico.cadastrarUsuario(
+          nome: _nomeController.text,
+          senha: _senhaController.text,
+          email: _emailController.text,
+        );
       }
     } else {
       print("Form inválido");
