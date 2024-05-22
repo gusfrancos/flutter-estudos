@@ -7,8 +7,4 @@ class ValidaFormulario {
     final emailRegExp = RegExp(r'^[\w-.]+@([\w-]+.)+[\w-]{2,4}$');
     return emailRegExp.hasMatch(email);
   }
-
-  static botaoClicarFormChmaValidator(GlobalKey<FormState> formKey) {
-    formKey.currentState!.validate();
-  }
 }

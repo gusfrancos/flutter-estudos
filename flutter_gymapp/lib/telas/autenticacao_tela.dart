@@ -14,6 +14,10 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
   bool queroEntrar = true;
   final _formKey = GlobalKey<FormState>();
 
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _senhaController = TextEditingController();
+  TextEditingController _nomeController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +62,7 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
                       height: 32,
                     ),
                     TextFormField(
+                      controller: _emailController,
                       decoration: getAuthenticationInputDecoration("E-mail"),
                       validator: (String? value) {
                         if (value == null) {
@@ -75,15 +80,16 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
                       height: 8,
                     ),
                     TextFormField(
+                      controller: _senhaController,
                       decoration: getAuthenticationInputDecoration("Senha"),
                       obscureText: true,
-                       validator: (String? value) {
-                              if (value!.length < 3) {
-                                return 'Por favor, insira uma senha válida.';
-                              }
+                      validator: (String? value) {
+                        if (value!.length < 3) {
+                          return 'Por favor, insira uma senha válida.';
+                        }
 
-                              return null;
-                            },
+                        return null;
+                      },
                     ),
                     const SizedBox(
                       height: 8,
@@ -108,6 +114,7 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
                             height: 8,
                           ),
                           TextFormField(
+                            controller: _nomeController,
                             decoration:
                                 getAuthenticationInputDecoration("Nome"),
                             validator: (String? value) {
@@ -126,7 +133,7 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        ValidaFormulario.botaoClicarFormChmaValidator(_formKey);
+                        botaoClicarFormChamaValidator();
                       },
                       child: Text(
                         (queroEntrar) ? "Entrar" : "Cadastrar",
@@ -173,5 +180,19 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
         ],
       ),
     );
+  }
+
+  botaoClicarFormChamaValidator() {
+    if (_formKey.currentState!.validate()) {
+      if (queroEntrar) {
+        print("Entrada Validada");
+      } else {
+        print("Cadastro Validado");
+        print(
+            "${_emailController.text},{$_senhaController.text},{$_nomeController.text}");
+      }
+    } else {
+      print("Form inválido");
+    }
   }
 }
