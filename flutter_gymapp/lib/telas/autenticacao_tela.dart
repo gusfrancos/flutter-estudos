@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gymapp/_comun/meu_snackbar.dart';
 import 'package:flutter_gymapp/_comun/minhas_cores.dart';
 import 'package:flutter_gymapp/_comun/validacoes_formularios.dart';
 import 'package:flutter_gymapp/componentes/decoracao_campo_autenticacao.dart';
@@ -192,11 +193,22 @@ class _AutenticacaoTelaState extends State<AutenticacaoTela> {
         print("Cadastro Validado");
         print(
             "${_emailController.text},{$_senhaController.text},{$_nomeController.text}");
-        _autenticacaoServico.cadastrarUsuario(
+        _autenticacaoServico
+            .cadastrarUsuario(
           nome: _nomeController.text,
           senha: _senhaController.text,
           email: _emailController.text,
-        );
+        )
+            .then((String? erro) {
+          if (erro != null) {
+            mostrarSnackBar(context: context, texto: erro);
+          } else {
+            mostrarSnackBar(
+                context: context,
+                texto: "Cadastro efetuado com sucesso!",
+                isErro: false);
+          }
+        });
       }
     } else {
       print("Form inválido");
